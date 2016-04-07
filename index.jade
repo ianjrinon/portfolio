@@ -1,0 +1,38 @@
+//output:index.html
+doctype html
+html(lang='en')
+  head
+    title Ian J Riñon
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="I'm a web designer and developer from Philippines")
+    meta(name="keywrod" content="web designer, freelance web designer, web designer philippines, web design, cebu web design")
+    link(rel="stylesheet" type="text/css" href="css/style.min.css")
+  body
+    header.l-header
+      a(class='brand', href='#') IR
+      .menu-trigger
+        - for (var x = 0; x < 3; x++)
+          span.menu__icon
+      - var classes = ['menubar', 'menu--primary']
+      - list = ["About", "See Projects", "Hire"]
+      navbar(class=classes)
+        ul.menu__root
+          each item in list
+            li.menu__item 
+              a(class={active: currentUrl === '/about'} href='/about')= item
+      
+    .section.section--intro
+      div
+        h1.section__title 
+          span.hT Hello Everyone  <br/> 
+          span.hD I'm a UX/UI designer and a FRONT-END Dev. <br/> 
+          span.hE just ping me for side projects
+        
+            
+          
+    footer.l-footer
+      .social-media
+        ul.social__list
+        
+    script(src='https://code.jquery.com/jquery-1.12.0.min.js')
+    script(src='js/main.min.js')
